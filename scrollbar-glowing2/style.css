@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+}
+body{
+    background: #000;
+}
+
+section{
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 100px; */
+}
+
+section h2{
+    font-size: 4em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+section p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent,#2600ff);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent,#00c6ff);
+}
+

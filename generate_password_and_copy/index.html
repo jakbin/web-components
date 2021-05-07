@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Ganerate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="input">
+        <h2>Random Password Ganerate App</h2>
+        <input type="text" name="" placeholder="Create Password" id="password" readonly>
+        <img src="copy.png" class="cpoy" onclick="copyPassword();">
+        <div id="btn" onclick="getPassword();">Ganerate Password</div>
+    </div>
+    <div class="alert"></div>
+    <script type="text/javascript">
+       var alert = document.querySelector('.alert')
+
+
+        function getPassword(){
+            var chars ="01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+?><:{}[]";
+            var passwordLength = 16;
+            var password = "";
+
+            for (var i = 0; i < passwordLength; i++) {
+                const randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber,randomNumber+1)
+            }
+            document.getElementById("password").value = password;
+            alert.innerHTML = "New Password Copied: <br>" + password; 
+        }
+
+        function copyPassword(){
+            var copyPassText = document.getElementById("password");
+            copyPassText.select();
+            copyPassText.setSelectionRange(0,9999);
+            document.execCommand("copy");
+            alert.classList.toggle('active');
+            setTimeout(function(){
+                alert.classList.toggle('active');
+            },2000)
+        }
+        
+    </script>
+</body>
+</html>

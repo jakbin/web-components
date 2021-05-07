@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Line Indicater</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <div id="marker"></div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">service</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <script>
+        const marker = document.querySelector('#marker');
+        const item = document.querySelectorAll('ul li a')
+
+        function indicator(e) {
+            marker.style.top = e.offsetTop + 'px';
+            marker.style.width = e.offsetWidth + 'px';
+        }
+
+        item.forEach(link =>{
+            link.addEventListener('mousemove',(e) => {
+                indicator(e.target);
+            })
+        })
+    </script>
+</body>
+</html>

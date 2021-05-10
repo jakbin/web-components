@@ -1,6 +1,6 @@
 # web-components
 
-###some web components with awesome css
+### some web components with awesome css
 
 * [About Me Page](https://jakbin.github.io/web-components/about_me)
 
